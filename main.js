@@ -5,13 +5,20 @@
 function getDogPics(numDogs) {
     fetch(`https://dog.ceo/api/breeds/image/random/${numDogs}`)
     .then(response=>response.json())
-    .then(responseJson=>{
-            for(var item of responseJson.message){
-                $(".dog-images").append(`<img class='dog-pic' src='${item}'>`)
-            }
-    })
+    .then(responseJson=>displayImage(responseJson))
     .catch(error=>alert("Oops! something went wrong"));
 
+}
+
+
+/**
+ * Extract Image URI from response and display the image to the DOM
+ * @param {responseJson} API response 
+ */
+function displayImage(responseJson) {
+    for(let item of responseJson.message){
+        $(".dog-images").append(`<img class='dog-pic' src='${item}'>`)
+    }
 }
 
 /**
