@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.dog-api {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.dog-pic {
+  width: 400px;
+  height: 400px;
+}
